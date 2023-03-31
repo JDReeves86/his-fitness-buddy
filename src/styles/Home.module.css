@@ -29,6 +29,11 @@
   color: black;
 }
 
+.btnList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
 .searchInput {
   margin-right: 1rem;
   background-color: azure;
@@ -37,7 +42,7 @@
   border-radius: 5px;
 }
 
-.searchBtn {
+.muscleBtn {
   padding: 0.25rem;
   margin-left: 5rem;
   background-color: beige;

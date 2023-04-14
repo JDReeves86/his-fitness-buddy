@@ -11,10 +11,14 @@ interface Props {
 const baseAPIURL: string = "https://wger.de/api/v2/exercise?language=2&";
 
 function Searchbar({ action }: Props) {
-  const sendRequest = (event: any) => {
-    const data = event.target.value;
-    console.log(`searching for ${data}`);
-    findMuscle(data);
+  const sendRequest = async (event: any) => {
+    const selectedValue = event.target.value;
+    const response = await fetch(`https://wger.de/api/v2/exercise?language=2&${selectedValue}`)
+    const jsonData = await response.json()
+    
+    console.log(jsonData.results)
+
+    action(jsonData.results)
   };
   return (
     <div className={styles.btnList}>

@@ -1,29 +1,21 @@
 import React, { useState } from "react";
 import Card from "./Card";
 import Searchbar from "./Searchbar";
+import SearchCards from "./SearchCards";
 import styles from "@/styles/Home.module.css";
 
 function SearchContainer() {
-  const [results, setResults] = useState({})
+  const [results, setResults] = useState([])
   
+  console.log(results)
+
   return (
     <div className={styles.searchContainer}>
       <div className={styles.searchBar}>
         <Searchbar action={setResults}/>
       </div>
       <div className={styles.searchResults}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <SearchCards input={results}/>
       </div>
     </div>
   );

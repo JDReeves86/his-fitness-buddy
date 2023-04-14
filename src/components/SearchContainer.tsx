@@ -7,8 +7,6 @@ import styles from "@/styles/Home.module.css";
 function SearchContainer() {
   const [results, setResults] = useState([])
   
-  console.log(results)
-
   return (
     <div className={styles.searchContainer}>
       <div className={styles.searchBar}>

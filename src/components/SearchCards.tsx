@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 
 interface Props {
-  input: Array<Exercise>;
+  input: Exercise[];
 }
 
 interface Exercise {
@@ -17,7 +17,7 @@ function SearchCards({ input }: Props) {
     <>
       {input.map((el: Exercise) => {
         console.log(el);
-        return <Card />
+        return <Card input={el}/>
       })}
     </>
   );
